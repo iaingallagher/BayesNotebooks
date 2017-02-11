@@ -1,0 +1,8 @@
+model {
+  
+  a ~ dunif(L, H) # priors on a & b
+  b ~ dunif(L, H)
+  theta ~ dbeta(a, b) # uninformative prior on theta
+  y ~ dbin(theta, Ntotal) # likelihood
+}
+
